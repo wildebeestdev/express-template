@@ -1,7 +1,7 @@
 {
-  "name": "express-template",
+  "name": "Tiny Beest API",
   "version": "1.0.0",
-  "description": "",
+  "description": "Easy to use image compression api, based off of Tinypng.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +11,14 @@
   "dependencies": {
     "body-parser": "^1.14.2",
     "cors": "^2.7.1",
+    "dotenv": "^2.0.0",
+    "ejs": "^2.4.2",
     "express": "^4.13.4",
-    "morgan": "^1.6.1"
+    "fs": "0.0.2",
+    "http": "0.0.0",
+    "lodash": "^4.13.1",
+    "morgan": "^1.6.1",
+    "node-uuid": "^1.4.7",
+    "tinify": "^1.3.0"
   }
 }

@@ -1,21 +1,24 @@
-var express = require('express');
-var logger = require('morgan');
-var bodyParser = require('body-parser');
-var cors = require('cors');
+var express     = require('express');
+var logger      = require('morgan');
+var bodyParser  = require('body-parser');
+var cors        = require('cors');
+var env         = require('dotenv').config();
+var port        = 3000;
 
-var port = 3000;
+var routes      = require('./routes/app');
 
-var routes = require('./routes/app');
-
-var app = express();
+var app         = express();
 
 app.options('*', cors());
 
+// configure Express
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/', routes);
+
+app.use(express.static(__dirname + '/public'));
 
 // Handle 404
 app.use(function(req, res) {
